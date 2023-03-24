@@ -45,12 +45,12 @@ blocks([A, B, C | T1], [D, E, F | T2], [G, H, I | T3]) :-
     all_distinct([A, B, C, D, E, F, G, H, I]),
     blocks(T1, T2, T3).
 
-    :- json_object
-    relationship_solution(problemKey:integer, solution:atom),
-    sudoku_solution(problemKey:integer, solution:list).
 
+:- json_object
+relationship_solution(problemKey:integer, solution:atom),
+sudoku_solution(problemKey:integer, solution:list).
 
-
+% Ersetze alle 0 durch _
 replace_all([], []).
 replace_all([H|A], [H|B]) :-
     H \= 0,
